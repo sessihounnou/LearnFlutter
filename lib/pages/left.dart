@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learn/main.dart';
 
 class Left extends StatefulWidget {
-  const Left({super.key});
+  const Left({Key? key}) : super(key: key);
 
   @override
   State<Left> createState() => _LeftState();
@@ -15,22 +15,24 @@ class _LeftState extends State<Left> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
-            onPressed: () {
-              // je l'ai mis pour l'avatar en atttendant de trouvé un truc pausible
-            },
-            icon: Icon(Icons.person_3_outlined)),
+          onPressed: () {
+            // je l'ai mis pour l'avatar en attendant de trouver un truc plausible
+          },
+          icon: Icon(Icons.person_outline),
+        ),
         title: Column(
           children: <Widget>[
             Text("Hello, good morning!"),
-            Text("Jack Sparrow")
+            Text("Jack Sparrow"),
           ],
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                // c'est pour
-              },
-              icon: Icon(Icons.notifications_sharp)),
+            onPressed: () {
+              // c'est pour
+            },
+            icon: Icon(Icons.notifications),
+          ),
         ],
       ),
       body: Container(
@@ -44,7 +46,7 @@ class _LeftState extends State<Left> {
                   Text("£ 112.340.00"),
                   Row(
                     children: [Text("£ 10,240.00 "), Text("+12%")],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -55,26 +57,30 @@ class _LeftState extends State<Left> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      /*  ElevatedButton(
-                    style: 
-                      const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll<Color>(Colors.orangeAccent),
-                    ),
-                    onPressed: () {}, 
-                    children: [ 
-                      const 
-                      Text('Withdraw'),
-                      Icon(Icons.arrow_back_sharp)
-                        ]
-                    ), */
-
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    color: Colors.amberAccent,
-                    width: 50.0,
-                    height:20.0,
-                   
-                  ),
+                      Container(
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.amberAccent,
+                        width: 50.0,
+                        height: 20.0,
+                        child: Row(
+                          children: [
+                            Icon(Icons.arrow_circle_left_sharp),
+                            Text('Withdraw'),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(10.0),
+                        color: Colors.white,
+                        width: 50.0,
+                        height: 20.0,
+                        child: Row(
+                          children: [
+                            Icon(Icons.arrow_back_sharp),
+                            const Text('Deposite'),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
