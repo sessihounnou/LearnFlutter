@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/main.dart';
 
 class Left extends StatefulWidget {
   const Left({super.key});
@@ -48,7 +49,20 @@ class _LeftState extends State<Left> {
             ),
           ),
           Row(
-            children: [],
+            children: [
+              ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.orangeAccent),
+                ),
+                children: [
+                  Icon(Icons.arrow)
+                   Text( "Withdraw")],
+                onPressed: () {
+                  // ...
+                },
+              ),
+
+            ],
           )
         ],
       )),
