@@ -73,8 +73,8 @@ class _LeftState extends State<Left> {
                     color: Colors.amberAccent,
                     width: 50.0,
                     height:20.0,
-                    text:
-                  )
+                   
+                  ),
                     ],
                   ),
                 ),
