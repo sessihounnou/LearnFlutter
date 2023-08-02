@@ -34,38 +34,55 @@ class _LeftState extends State<Left> {
         ],
       ),
       body: Container(
-          child: Column(
-        children: [
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Available Balance"),
+                  Text("£ 112.340.00"),
+                  Row(
+                    children: [Text("£ 10,240.00 "), Text("+12%")],
+                  )
+                ],
+              ),
+            ),
+            Row(
               children: [
-                Text("Available Balance"),
-                Text("£ 112.340.00"),
-                Row(
-                  children: [Text("£ 10,240.00 "), Text("+12%")],
-                )
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      /*  ElevatedButton(
+                    style: 
+                      const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll<Color>(Colors.orangeAccent),
+                    ),
+                    onPressed: () {}, 
+                    children: [ 
+                      const 
+                      Text('Withdraw'),
+                      Icon(Icons.arrow_back_sharp)
+                        ]
+                    ), */
+
+                  Container(
+                    margin: const EdgeInsets.all(10.0),
+                    color: Colors.amberAccent,
+                    width: 50.0,
+                    height:20.0,
+                    text:
+                  )
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
-          Row(
-            children: [
-              ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.orangeAccent),
-                ),
-                children: [
-                  Icon(Icons.arrow)
-                   Text( "Withdraw")],
-                onPressed: () {
-                  // ...
-                },
-              ),
-
-            ],
-          )
-        ],
-      )),
+          ],
+        ),
+      ),
     );
   }
 }
