@@ -12,68 +12,67 @@ class _LeftState extends State<Left> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {
-              // je l'ai mis pour l'avatar en attendant de trouver un
-            },
-            icon: const Icon(
-              Icons.person_outline,
-              color: Color.fromARGB(235, 226, 58, 7),
-              size: 30.0,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            // je l'ai mis pour l'avatar en attendant de trouver un
+          },
+          icon: const Icon(
+            Icons.person_outline,
+            color: Color.fromARGB(235, 226, 58, 7),
+            size: 30.0,
+          ),
+        ),
+        title: const Column(
+          children: <Widget>[
+            Text(
+              "Hello, good morning!",
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 10),
             ),
-          ),
-          title: const Column(
-            children: <Widget>[
-              Text(
-                "Hello, good morning!",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 10),
+            Text(
+              "Jack Sparrow",
+              style: TextStyle(
+                color: Colors.black,
+                fontStyle: FontStyle.normal,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
               ),
-              Text(
-                "Jack Sparrow",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ],
-          ),
-          actions: [
-            Icon(
-              Icons.notifications,
-              color: Colors.black,
-              size: 30.0,
             ),
           ],
         ),
+        actions: [
+          Icon(
+            Icons.notifications,
+            color: Colors.black,
+            size: 30.0,
+          ),
+        ],
+      ),
 
-        // Le contenu de la page 
+      // Le contenu de la page
 
-        body: Container(
-          child: Column(
-            children: [
-              const Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                    Text(
-                   "Available Balance",
+      body: Container(
+        child: Column(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Available Balance",
                     style: TextStyle(
                         color: Colors.grey,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w100,
                         fontSize: 12),
                   ),
-                   
+
                   Text(
-                    "£ 112.340.00",
+                    " 112.340.00",
                     style: TextStyle(
                         color: Colors.black,
                         fontStyle: FontStyle.normal,
@@ -81,128 +80,125 @@ class _LeftState extends State<Left> {
                         fontSize: 20),
                   ),
 
-                  Column(
-                      children:[
-                        Center(
-
-                      
-                       child: 
-                        Row(
+                  Row(
+                    children: [
+                      Center(
+                        child: const Row(
                           children: [
-                            Text(
-                           "£ 10,240.00 ",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 10,)
+                            Text("£ 10,240.00 ",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10,
+                                )),
+                            Text("+12%",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 11, 235, 18),
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10,
+                                )),
+                          ],
                         ),
-                        
-                        Text(
-                          "+12%",
-                           style: TextStyle(
-                            color: Color.fromARGB(255, 11, 235, 18),
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 10,)
-                          ),   
-                        ],
                       ),
-
-                    ),
-
-                  
-                  ],
-                ),
-                ],
-                
+                    ],
+                  ),
+                  /*   ],
+              ),
                 //
-                ),
-              ),
-              Row(
-              children: [
-              Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 224, 100, 17),
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Icon(Icons.arrow_circle_left_sharp),
-                          Text(
-                            'Withdraw',
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          ),
-                        ],
-                      ),    
-                      ),
-                  ),
-
-                  Container(
-                    width: 100,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Icon(Icons.arrow_circle_right_sharp),
-                          Text(
-                            'Deposite',
-                            style: TextStyle(color: Color.fromARGB(255, 224, 100, 17), fontSize: 12),
-                          ),
-                        ],
-                      ),    
-                      ),
-                  ),
-                  ],
-                ),
-              ),
-                ],
-              ),
-              //Ligne de PortFolio et de View Al
-              Row(
-                children: [
-                  Text(
-                    "PortFolio",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,),
-                  ),
-                  Text(
-                    "View All",
-                    style: TextStyle(
-                        color: const Color.fromARGB(255, 255, 94, 0),
-                        fontStyle: FontStyle.normal,
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,
+                ),  */
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(0.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Container(
+                              width: 100,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 224, 100, 17),
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.arrow_circle_left_sharp),
+                                    Text(
+                                      'Withdraw',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 100,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
+                              child: const Center(
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.arrow_circle_right_sharp),
+                                    Text(
+                                      'Deposite',
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 224, 100, 17),
+                                          fontSize: 18),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    width: 20,
-                  )
+
+                  //Ligne de PortFolio et de View Al
+                  const Row(
+                    children: [
+                      Text(
+                        "PortFolio",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Text(
+                        "View All",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 94, 0),
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      )
+                    ],
+                  ),
+                  Row(),
+                  // Ligne après portfolio
                 ],
               ),
-              // Ligne après portfolio
-              SizedBox(),
-              
-
-            ],
-              ),
-             
-          ),
-        );      
-}
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
