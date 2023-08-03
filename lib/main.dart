@@ -2,13 +2,33 @@ import 'package:flutter/material.dart';
 import 'pages/left.dart';
 
 void main() {
-  runApp(const MyLeft());
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Work',
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: const Left(),
+      routes:{},
+      debugShowCheckedModeBanner:false,
+    );
+  }
 }
 
 
-class MyLeft extends StatefulWidget {
-  const MyLeft({super.key});
 
+class MyLeft extends StatefulWidget {
+
+  const MyLeft({Key? key}) : super(key: key);
   @override
   State<MyLeft> createState() => _MyLeftState();
 }
@@ -16,30 +36,25 @@ class MyLeft extends StatefulWidget {
 class _MyLeftState extends State<MyLeft> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
+    
 
+    PageController pageController = PageController();
+      List<Widget> pages = [ Left(),];
 
- PageController pageController = PageController();
-  List<Widget> pages = [ Left(),];
+      int selectIndex = 0;
+      void onPageChanged(int index) {
+        (Null Function() param0) {
+        }(() {
+          selectIndex = index;
+        });
+      }
 
-  int selectIndex = 0;
-  void onPageChanged(int index) {
-    setState(() {
-      selectIndex = index;
-    });
-  }
-  
-  void setState(Null Function() param0) {
-  }
+      void setState(Null Function() param0) {
+      }
 
-  void onItemTap(int selectedItems) {
-    pageController.jumpToPage(selectedItems);
-  }
-
-  @override
-  Widget build(BuildContext context) {
+      void onItemTap(int selectedItems) {
+        pageController.jumpToPage(selectedItems);
+      }
     return Scaffold(
       body: PageView(
         controller: pageController,
@@ -65,4 +80,5 @@ class _MyLeftState extends State<MyLeft> {
         ],
       ),
     );
+  }
   }
