@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'pages/left.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,17 +17,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const Left(),
-      routes:{},
-      debugShowCheckedModeBanner:false,
+      home: const MyLeft(),
+      routes: {},
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-
-
 class MyLeft extends StatefulWidget {
-
   const MyLeft({Key? key}) : super(key: key);
   @override
   State<MyLeft> createState() => _MyLeftState();
@@ -36,32 +33,29 @@ class MyLeft extends StatefulWidget {
 class _MyLeftState extends State<MyLeft> {
   @override
   Widget build(BuildContext context) {
-    
-
     PageController pageController = PageController();
-      List<Widget> pages = [ Left(),];
+    List<Widget> pages = [MyLeft(),];
 
-      int selectIndex = 0;
-      void onPageChanged(int index) {
-        (Null Function() param0) {
-        }(() {
-          selectIndex = index;
-        });
-      }
+    int selectIndex = 0;
+    void onPageChanged(int index) {
+      (Null Function() param0) {}(() {
+        selectIndex = index;
+      });
+    }
 
-      void setState(Null Function() param0) {
-      }
+    void setState(Null Function() param0) {}
 
-      void onItemTap(int selectedItems) {
-        pageController.jumpToPage(selectedItems);
-      }
+    void onItemTap(int selectedItems) {
+      pageController.jumpToPage(selectedItems);
+    }
+
     return Scaffold(
       body: PageView(
         controller: pageController,
-        //Ici est la partie du code qui affiche les pages 
+        //Ici est la partie du code qui affiche les pages
         children: [
-         Left (),
-          ],
+          MyLeft(),
+        ],
         onPageChanged: onPageChanged,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -76,9 +70,8 @@ class _MyLeftState extends State<MyLeft> {
                     : Color.fromARGB(118, 137, 84, 23),
               ),
               label: "Left"),
-          
         ],
       ),
     );
   }
-  }
+}
