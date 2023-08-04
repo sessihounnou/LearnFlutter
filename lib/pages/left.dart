@@ -338,8 +338,66 @@ class _MyLeftState extends State<MyLeft> {
               ),
             ],
           ),
-              ],
+
+            ListView(
+            padding: const EdgeInsets.all(20.0),
+            children: [
+              Row(
+                children: [
+                Image.asset('assets/images/starburks-icon.png'),
+                
+                Column(
+                  children: [
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w500,
+                      fontSize:10),
+                    ),
+
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16),
+                    ),
+                  ],
+                ),
+                // Zone du graphe 
+
+                Column(
+                  children:[
+                    
+                  Text(
+                    "£ 35.123 ",
+                    style: TextStyle(
+                    color: Colors.black,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 10,)
+                      ),
+                  Text(
+                    "+14%",
+                    style: TextStyle(
+                    color: Color.fromARGB(255, 11, 235, 18),
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 08,)
+                  ),
+                  ]
+                )
+                ],
+          )
+        ],
+)
+ 
+      ],
             ),
+            //partie qui traite le bottomnavigation
 
           );
   }

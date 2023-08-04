@@ -12,14 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Work',
+      title: 'MyLeft',
       theme: ThemeData(
         primarySwatch: Colors.orange,
         scaffoldBackgroundColor: Colors.white,
       ),
       home: const MyLeft(),
-      routes: {},
-      debugShowCheckedModeBanner: false,
+      /* routes: {},
+      debugShowCheckedModeBanner: false, */
     );
   }
 }
@@ -41,6 +41,13 @@ class _MyLeftState extends State<MyLeft> {
       (Null Function() param0) {}(() {
         selectIndex = index;
       });
+     /*  setState(() {
+      selectIndex = index;
+      }); */
+
+    void onItemTap(int selectedItems) {
+      pageController.jumpToPage(selectedItems);
+    }
     }
 
     void setState(Null Function() param0) {}
@@ -58,7 +65,7 @@ class _MyLeftState extends State<MyLeft> {
         ],
         onPageChanged: onPageChanged,
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      /* bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(170, 201, 169, 211),
         onTap: onItemTap,
         items: [
@@ -71,7 +78,7 @@ class _MyLeftState extends State<MyLeft> {
               ),
               label: "Left"),
         ],
-      ),
+      ), */
     );
   }
 }
