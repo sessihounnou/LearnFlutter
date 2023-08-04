@@ -12,6 +12,32 @@ class _MyLeftState extends State<MyLeft> {
 
   @override
   Widget build(BuildContext context) {
+    PageController pageController = PageController();
+    List<Widget> pages = [MyLeft(),];
+
+    int selectIndex = 0;
+    void onPageChanged(int index) {
+      (Null Function() param0) {}(() {
+        selectIndex = index;
+      });
+     /*  setState(() {
+      selectIndex = index;
+      }); */
+
+    }
+
+    void setState(Null Function() param0) {}
+
+    void onItemTap(int selectedItems) {
+      pageController.jumpToPage(selectedItems);
+    }
+
+
+
+
+
+
+    
     return Scaffold(
       // Partie du code concernant l'app bar
       appBar: AppBar(
@@ -391,14 +417,163 @@ class _MyLeftState extends State<MyLeft> {
                   ]
                 )
                 ],
+          ),
+
+          Row(
+                children: [
+                Image.asset('assets/images/starburks-icon.png'),
+                
+                Column(
+                  children: [
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w500,
+                      fontSize:10),
+                    ),
+
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16),
+                    ),
+                  ],
+                ),
+                // Zone du graphe 
+
+                Column(
+                  children:[
+                    
+                  Text(
+                    "£ 35.123 ",
+                    style: TextStyle(
+                    color: Colors.black,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 10,)
+                      ),
+                  Text(
+                    "+14%",
+                    style: TextStyle(
+                    color: Color.fromARGB(255, 11, 235, 18),
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 08,)
+                  ),
+                  ]
+                )
+                ],
+          ),
+
+          Row(
+                children: [
+                Image.asset('assets/images/starburks-icon.png'),
+                
+                Column(
+                  children: [
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w500,
+                      fontSize:10),
+                    ),
+
+                    Text(
+                      " Sbux",
+                      style: TextStyle(
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16),
+                    ),
+                  ],
+                ),
+                // Zone du graphe 
+
+                Column(
+                  children:[
+                    
+                  Text(
+                    "£ 35.123 ",
+                    style: TextStyle(
+                    color: Colors.black,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 10,)
+                      ),
+                  Text(
+                    "+14%",
+                    style: TextStyle(
+                    color: Color.fromARGB(255, 11, 235, 18),
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 08,)
+                  ),
+                  ]
+                )
+                ],
           )
         ],
 )
  
       ],
-            ),
-            //partie qui traite le bottomnavigation
+      ),
+       //partie qui traite le bottomnavigation
 
-          );
+       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor:Color.fromARGB(251, 5, 55, 83),
+        onTap: onItemTap,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_rounded,
+                color: selectIndex == 0
+                    ? Color.fromARGB(255, 137, 84, 23)
+                    : Color.fromARGB(118, 137, 84, 23),
+              ),
+              label: "Accueil"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.file_open_outlined,
+                color: selectIndex == 1
+                    ? Color.fromARGB(255, 10, 54, 69)
+                    : Color.fromARGB(118, 10, 54, 69),
+              ),
+              label: "Fichiers"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.compare_arrows_outlined,
+                color: selectIndex == 2
+                    ? Color.fromARGB(255, 12, 94, 38)
+                    : Color.fromARGB(118, 12, 94, 38),
+              ),
+              label: "Échange"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.timelapse_outlined,
+                color: selectIndex == 3
+                    ? Color.fromARGB(232, 218, 65, 5)
+                    : Color.fromARGB(255, 199, 40, 0),
+              ),
+              label: "Temps"),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outlined,
+              color: selectIndex == 4
+                  ? Color.fromARGB(232, 218, 65, 5)
+                  : Color.fromARGB(255, 199, 40, 0),
+            ),
+            label: "Profil"),
+        ]
+
+    )
+    );
   }
 }

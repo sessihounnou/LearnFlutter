@@ -45,9 +45,6 @@ class _MyLeftState extends State<MyLeft> {
       selectIndex = index;
       }); */
 
-    void onItemTap(int selectedItems) {
-      pageController.jumpToPage(selectedItems);
-    }
     }
 
     void setState(Null Function() param0) {}
